@@ -1,28 +1,26 @@
+import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserComponent } from './user/user.component';
-
-const APP_ROUTES: Routes = [
-  { path: '', component: HomePageComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'users/:id', component: UserComponent }
-];
+import { NotFoundComponent } from './not-found/not-found.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
     HomePageComponent,
-    UserComponent
+    UserComponent,
+    NotFoundComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(APP_ROUTES)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-interface User {
+export interface User {
   id: number;
   name: string;
 }
@@ -38,6 +38,7 @@ export class UsersComponent implements OnInit {
       queryParams: {
         name: user.name
       },
+      queryParamsHandling: 'merge',
       fragment: 'foo'
     });
   }
